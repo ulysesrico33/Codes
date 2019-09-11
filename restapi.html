@@ -1,0 +1,78 @@
+<!-- 
+    Given a REST API endpoint, complete following requirement:
+        
+        1. Make a GET request to the endpoint and consume the data
+        2. Generate a report summarizing the number of complete and incomplete tasks
+                * Total tasks:
+                * Completed tasks: 
+                * Peding tasks:
+        3. Get all tasks for a specific user (display a input to introduce a userId, a button and a tasks table)
+
+
+    NOTE:
+    The REST API returns a array of task each one with following structure:
+        {
+            "userId": 1,
+            "id": 1,
+            "title": "delectus aut autem",
+            "completed": false
+        }
+
+-->
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>Hi---</h1>
+  <div id="div1">
+  	
+  </div>
+</body>
+
+</html>
+
+<script>
+
+var endpoint = 'https://jsonplaceholder.typicode.com/todos';
+var ulyendpoint='https://jsonplaceholder.typicode.com/posts';
+//Allow-Control-Allow-Origin: *' 
+
+    //Consume data
+
+    $.ajax(
+        {
+        	
+            url: ulyendpoint,
+            type: 'GET',
+
+            success: function (data) {
+
+                //Summarize total, complete and uncomplete tasks
+                
+                
+                
+                $.each(data, function( index, model ) {
+                    
+                    
+
+                    $('#div1').append('<p>Id:'+model.id+' - Body: '+model.body+'- Title:'+model.title+'</p>');
+
+                    
+
+                  });
+
+                
+
+
+            },
+            error: function (msg) {
+
+            	console.error(msg);
+                
+            }
+
+        }
+    );</script>
